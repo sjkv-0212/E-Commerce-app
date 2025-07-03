@@ -1,16 +1,15 @@
-// screens/products_screen.dart
-class ProductsScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    final products = Provider.of<ProductsProvider>(context).items;
-    
-    return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        childAspectRatio: 3/2,
-      ),
-      itemBuilder: (ctx, i) => ProductItem(products[i]),
-      itemCount: products.length,
-    );
-  }
+class Product {
+  final String id;
+  final String name;
+  final double price;
+  final String imageUrl;
+  final String description;
+
+  Product({
+    required this.id,
+    required this.name,
+    required this.price,
+    required this.imageUrl,
+    required this.description,
+  });
 }
